@@ -1,0 +1,52 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<!-- saved from url=(0076)http://homepages.gac.edu/~jengelha/courses/F2019/MCS-378/labs/lab1/lab1.html -->
+<html lang="en"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
+<title>MCS-378 Lab 1, Fall 2019</title>
+</head>
+<body class="vsc-initialized">
+<h1><a href="https://homepages.gac.edu/~jengelha/courses/F2019/MCS-378/">MCS-378</a> Lab 1:  Scheduling Experiments, Fall 2019</h1>
+
+<h2>Due: September 17, 2019</h2>
+
+<h2>Introduction</h2>
+<p>In this lab,you will experiment with how multiple threads are scheduled, trying out all four combinations that arise from two possibilities for each of two variables.  You will vary the scheduling algorithm between Linux's normal CFS scheduler and FIFO fixed-priority scheduling. You will also vary the number of processors between 1 and 2. This is Exploration Project 3.3 from pages 85-89 of <a href="https://gustavus.edu/+max/os-book/">the textbook</a>, although I provide some additional instructions here regarding what I'm looking for in your lab report.  The Exploration Project contains a <a href="https://gustavus.edu/+max/courses/F2013/MCS-378/textbook-programs/ch03/threads.cpp">threads.cpp</a> program split over Figures 3.12 and 3.13 (pages 87-88); I've linked the entire program here for your use.</p>
+
+<h2>Characterizing Your Experimental Environment</h2>
+
+<p>You are conducting a scientific experiment and writing a scientific
+report.  As such, it is important that you report not only the data
+you obtain (and your interpretation of it), but also the conditions
+under which that data was obtained. This allows readers to more fully
+understand your results, and it also provides the necessary
+information for anyone who wants to replicate or extend your
+experiment.</p>
+
+<p>
+Your report should specify the exact version of Linux you used and a
+reasonable level of detail about the hardware: processor model name
+and clock speed, memory size,
+and disk drive model.  One place you can find these pieces of information
+in /proc/version, /proc/cpuinfo, /proc/meminfo, and
+/proc/scsi/scsi.  Ask if you need help locating the appropriate
+information.</p>
+
+<h2>About Predictions</h2>
+<p>Each part of the Exploration Project asks you what you would expect to happen under a particular circumstance, asks you why you expect that, and then tells you what to do in order to to test your prediction.  It is important that you think through a prediction and explanation <i>first</i> before you find out the reality.</p>
+
+<p>If you test your prediction and find it was incorrect, what then?  If that happens, I would like you to go back to thinking about the scheduling situation and try to figure out where you went wrong in your initial analysis.  Now that you know what really happens, can you come up with an explanation of why that happens?  If after some effort you still can't come up with a reasonable explanation of the phenomenon you observed, it would be appropriate to consult me.</p>
+
+<p>I expect to see all of these components in your lab report: your initial predication and how you justified it, the actual behavior you observed, and your explanation of that observation if your initial prediction was incorrect.</p>
+
+<h2>Installing Needed Programs</h2>
+<p>The instructions in the Exploration Project start with using <code>g++</code> to compile the <code>threads.cpp</code> test program. If you haven't previously installed <code>g++</code>, trying to run the <code>g++</code> command in a shell will produce instructions for how to do the installation using <code>apt-get</code>.  This is a general pattern; you are likely to encounter many programs you need to install.  Once <code>g++</code> is installed, you can repeat the original command; control-p is handy for bringing it back.</p>
+
+<h2>Your Report</h2>
+
+<p>You should upload to moodle a report in a generally readable form that succinctly explains all four experiments, including the contextual information and interpretation described above.  Generally readable form would include PDF or word document.   Your target audience is people familiar with CFS and fixed-priority scheduling at the level contained in our textbook, but who are not familiar with the Exploration Project itself. Feel free to use diagrams as well as text if that helps you express your explanations.</p>
+
+<p></p><hr><p>Instructor: <a href="https://gustavus.edu/~jengelha/">Jeff Engelhardt</a></p>
+
+
+
+</body></html>

@@ -1,0 +1,426 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<!-- saved from url=(0070)http://homepages.gac.edu/~jengelha/courses/F2019/MCS-378/syllabus.html -->
+<html lang="en"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
+<title>Syllabus for MCS-378: Operating Systems (Fall 2019)</title>
+</head>
+<body class="vsc-initialized">
+<h1>Syllabus for MCS-378: Operating Systems (Fall 2019)</h1>
+
+<h2>Overview</h2>
+
+This course covers the basics of operating
+systems as well as some material on concurrent programming,
+middleware, and networking.  There are two principal
+reasons why a course on operating systems is practical to take (as
+opposed to just interesting), even if you never expect to be involved
+in the development of an operating system (which most of you won't):
+<ul>
+<li>
+Operating systems provide the classic application domain for certain
+techniques that are useful in other contexts as well. In particular,
+concurrent programming has traditionally been been an “operating
+systems” topic but is now quite broadly applicable.  Other topics
+that are no longer the sole province of operating systems include
+resource allocation, security, and fault tolerance.
+</li><li>
+Although most of you won't write operating systems, you'll interface
+with them.  You may write applications programs that make use of the
+operating system's facilities.
+You may be a system administrator who has to configure and tune an
+operating system.
+An
+understanding of what goes on inside an operating system will allow
+you to be more effective in roles like these.  You may even find
+yourself tacking a new feature on in some small corner of an operating
+system other people wrote.
+</li></ul>
+
+<h2>Office hours, OHS 314</h2>
+
+<p>My office hours are Monday &amp; Friday 10:00-11:30, Tuesday &amp; Thursday 8:00-8:50
+ and by appointment.  Any time I am in my office and the door is open,
+ your are welcome to drop-in as well.  I will typically be on campus
+ MTRF 8-2:30, with breaks for lunch and noon hockey.
+  Feel free to send me email at <a href="mailto:jengelha@gustavus.edu">jengelha@gustavus.edu</a>.
+</p>
+
+<h2>World Wide Web</h2>
+
+All course materials will be available through my World Wide Web page.
+The URL for this course is <a href="http://homepages.gac.edu/~jengelha/courses/F2019/MCS-378/">https://gustavus.edu/~jengelha/courses/F2019/MCS-378/</a>.
+I am trying to keep this class paper free.  If you need physical copy of
+class materials, come see me so I can talk you out of it.
+
+<h2>Text and readings</h2>
+
+The primary text for the course is
+<a href="https://www.gac.edu/mcs/max/os-book/"><cite>Operating Systems and Middleware: Supporting
+Controlled Interaction</cite></a> by Max Hailperin, the current version of which is available online.
+Recent conference papers serve as
+additional required readings; you have access to these through the
+syllabus on the web.
+Those conference papers will form the basis for the student
+presentations, described below.
+
+<h2>Presentations</h2>
+
+There will be seven or eight times in the semester when I sit back and relax and
+let students teach the class instead.  Each time, a pair of students will have
+50 minutes to lead discussion on one of the papers we read from a
+conference.  The whole class will be expected to read the
+paper at least casually, but the students leading the class will be
+expected to have read it more carefully and done whatever it takes to
+really understand it, which may involve additional background reading,
+talking with me, etc.
+
+<p>
+Each pair of students will be responsible for setting up a meeting
+with me the week before their presentation to go over it with me.
+(You are welcome to additional consultations as well.)  At that
+meeting, you should also give me three  straightforward
+questions about your reading.  I will distribute these to the full
+class.  All class members will submit their answers to these three
+questions by 8:00 AM the day of your presentation, as a
+way of making sure we all have a common starting point.
+I will look through them and alert you before your
+presentation if there are any common difficulties you might want to
+address.  No late answers will be accepted for these questions because
+their point is to lay the groundwork for the presentation.
+
+</p><p>I will provide 
+<a href="http://homepages.gac.edu/~jengelha/courses/F2019/MCS-378/oral-presentation-tips.html">a list of attributes that good presentations have</a>.  I ask that you think about these while preparing your presentation.
+
+</p><p>I'm going to ask you to express a preference ranking for the
+topics and will try, to the extent possible, to assign people to topics
+based on that.  I suggest you read the abstracts of the papers to help determine your preferences; you can also take into account the timing of the presentations.
+I'll need to have you
+<a href="mailto:jengelha@gustavus.edu">email me</a> the rankings by class Wednesday September 11.
+
+</p><p>I hope to update this list with more current papers on similar topics.  You are also welcome to propose alternate papers if you wish, but time is running short.  
+</p><ol>
+<li><a name="paper1"></a>September 20: <a href="https://www.usenix.org/conference/osdi14/technical-sessions/presentation/fonseca">"SKI: Exposing Kernel Concurrency Bugs through Systematic Schedule Exploration"</a>, Pedro Fonseca, Rodrigo Rodrigues, and Björn B. Brandenburg, <cite>11th USENIX Symposium on Operating System Design and Implementation</cite>, October 2014, pages 415–431.<b></b>
+</li><li><a name="paper2"></a>September 30: <a href="https://www.usenix.org/conference/icac14/technical-sessions/presentation/diegues">"Self-Tuning Intel Transactional Synchronization Extensions"</a>, Nuno Diegues and Paolo Romano, <cite>11th International Conference on Autonomic Computing</cite>, June 2014, pages 209–219. <b> </b>
+</li><li><a name="paper3"></a>October 7: <a href="http://lazowska.cs.washington.edu/SMT.pdf">Simultaneous Multithreading</a>
+</li><li><a name="paper4"></a>October 17: <a href="https://www.usenix.org/conference/osdi14/technical-sessions/presentation/baumann">"Shielding Applications from an Untrusted Cloud with Haven"</a>, Andrew Baumann, Marcus Peinado, and Galen Hunt, <cite>11th USENIX Symposium on Operating System Design and Implementation</cite>, October 2014, pages 267–283.  <b></b>
+</li><li><a name="paper5"></a>November 11: <a href="https://www.usenix.org/conference/fast14/technical-sessions/presentation/rumble">"Log-structured Memory for DRAM-based Storage"</a>, Stephen M. Rumble, Ankita Kejriwal, and John Ousterhout, <cite>12th USENIX Conference on File and Storage Technologies</cite>, February 2014, pages 1–16.<b></b>
+</li><li><a name="paper6"></a>November 14: <a href="https://www.usenix.org/conference/nsdi15/technical-sessions/presentation/pfaff">"The Design and Implementation of Open vSwitch"</a>, Ben Pfaff, Justin Pettit, Teemu Koponen, Ethan Jackson, Andy Zhou, Jarno Rajahalme, Jesse Gross, Alex Wang, Joe Stringer, Pravin Shelar, Keith Amidon, and Martín Casado, <cite>12th USENIX Symposium on Networked Systems Design and Implementation</cite>, May 2015, pages 117–130. <b></b>
+</li><li><a name="paper7"></a>November 18: <a href="https://www.usenix.org/conference/atc14/technical-sessions/presentation/ongaro">"In Search of an Understandable Consensus Algorithm"</a>, Diego Ongaro and John Ousterhout, <cite>2014 USENIX Annual Technical Conference</cite>, June 2014, pages 305–319. <b></b>
+</li><li><a name="paper8"></a>December 6: <a href="https://www.usenix.org/conference/usenixsecurity15/technical-sessions/presentation/reaves">"Mo(bile) Money, Mo(bile) Problems: Analysis of Branchless Banking Applications in the Developing World"</a>, Bradley Reaves, Nolen Scaife, Adam Bates, Patrick Traynor, and Kevin R.B. Butler, <cite>24th USENIX Security Symposium</cite>, August 2015, pages 17–32.  <b></b>
+</li><li><a name="paper9"></a>December 9: <a href="https://www.usenix.org/conference/usenixsecurity17/technical-sessions/presentation/ding">"Efficient Protection of Path-Sensitive Control Security"</a>, Ren Ding, Chenxiong Qian, Chengyu Song, Bill Harris, Taesoo Kim and Wenke Lee<cite>26th USENIX Security Symposium</cite>, August 2017, pages 131–148  <b></b>
+</li></ol>
+
+<h2>Daily preparation assignment</h2>
+
+<p>Each class day that has a reading assignment, by 8:00 AM you are to enter on <a href="https://moodle.gac.edu/course/view.php?id=9041">Moodle</a>
+your preparation assignment for that day.
+(The first day of classes is excepted.)
+I will look
+these over in order to shape the class to meet your needs.  As
+additional incentive, they 
+provide an opportunity to earn Grade Points.
+No late preparation assignments
+are accepted, as that would undermine their real purpose.</p>
+
+<p>For a conference paper, the
+preparation assignment will consist of questions provided by the
+presenters, as described in the section on presentations.</p>
+
+<p>For readings from the textbook, your assignment is to send me an agenda
+for that day's class.  Is there old business from prior days that you
+see as needing more time?  In the new topics from that day's reading,
+what are the main points we should cover?  What illustrations,
+programs, or other examples from the book would you like to go over?
+Are there exercises we should work?
+Are there topics beyond the reading we ought to cover?
+</p>
+
+<h2>Independent exploration and programming projects</h2>
+
+<p>
+You have the opportunity to take on independent exploration and programming projects and thereby earn grade points.
+Each 
+chapter in the textbook ends with exercises, programming projects,
+and exploration projects.
+Of these three categories, the exercises are suitable for you to put
+on a class agenda as something we could talk about or work on together. The other two categories are available for your independent projects.
+For each of Chapters 2–11, you may submit via <a href="https://moodle.gac.edu/course/view.php?id=9041">Moodle</a> any programming or exploration project, subject to the
+restrictions listed below.</p>
+<ul>
+<li>You will receive credit for at most two projects in each chapter.
+</li><li>You will not receive credit for Chapter 1.
+</li><li>Each project must be submitted by one week after the last class that has reading from that chapter.
+</li><li>You may not choose Programming Project 3.1,
+Exploration Project 3.3,
+Exploration Project
+6.6, or Exploration Project 8.6.
+</li></ul>
+<p>Note that some projects in the text have fallen out of date relative to external software or resources. Be sure to ask for help if you are having trouble making adjustments to accommodate the present-day context.</p>
+
+<h2>Tests</h2>
+
+<p>There will be a midterm take-home test as shown on the
+<a href="http://homepages.gac.edu/~jengelha/courses/F2019/MCS-378/syllabus.html#schedule">schedule</a> below and a final exam <!--<a href="https://gustavus.edu/registrar/finals.php">-->as scheduled by the registrar<!--</a>-->. If you have a conflict with a testing time, please
+contact me as soon as possible to make an alternative arrangement.</p>
+
+<p>My default assumption is that students will take the final together.
+  Therefore, I would ask you to please be
+  respectful and quiet, even after completing your exam, so that your
+  fellow students have a good test-taking environment.
+  However, if you prefer to take the exam in a
+  separate room, please contact me in advance and I will try to
+  arrange it.</p>
+
+<p>
+The midterm will be open-book and open-notes whereas the final will be closed-book and mostly closed-notes.  You may, however, use a
+single 8 1/2 by 11 sheet of paper with <strong>hand-written</strong> notes for
+reference.  (Both sides of the sheet are OK.)</p>
+
+
+<h2>Honor</h2>
+Students are encouraged to discuss the course, including issues raised
+by the assignments.  However, the solutions to assignments
+should be individual original work unless otherwise specified.  If an
+assignment makes you realize you don't understand the material, ask a
+fellow student a question designed to improve your understanding,
+<em>not</em> one designed to get the assignment done.  To do otherwise is to
+cheat yourself out of understanding as well as to be intolerably
+dishonorable.
+
+<p>
+Any substantive contribution to your solution by another person or
+taken from a publication should be properly acknowledged in writing.
+Failure to do so is plagiarism and will necessitate disciplinary
+action.
+
+</p><p>
+The same standards regarding plagiarism apply to team projects as to
+the work of individuals, except that the author is now the entire team
+rather than an individual.  Anything taken from a source outside the
+team should be be properly cited.
+
+</p><p>
+One additional issue that arises from the team authorship of
+project reports is that all team members must stand behind all reports
+bearing their names.  All team members have quality assurance
+responsibility for the entire project. If there is irreconcilable
+disagreement within the team it is necessary to indicate as much in
+the report.
+
+</p><p>You are expected to be familiar with the college academic honesty
+honor code policy and to comply with that policy.  If you have any
+questions about it, please ask.</p>
+
+
+<h2>Late lab assignments</h2>
+
+All lab assignments are due at the beginning of class on
+the day indicated.  Late assignments will be penalized by one Grade Point (10 percent)
+for each weekday late or fraction
+thereof.<p></p>
+
+<p>
+If you are too sick to complete an assignment on time, you
+will not be penalized.  Simply notify me
+in writing that the lateness is due to illness.  Other circumstances
+will be evaluated on a case-by-case basis.</p>
+
+
+<h2>Grade changes</h2>
+
+Please point out any arithmetic or clerical error I make in grading,
+and I will gladly fix it.  You may also request reconsideration if I
+have been especially unjust.
+
+
+<h2>Grading</h2>
+
+<p>You will have the opportunity to earn up to 340 Grade Points (GP) throughout the semester as shown in the following table:</p>
+<table>
+<tbody><tr><th>Category</th><th>#</th><th>GP each</th><th>GP possible</th></tr>
+<tr><td>Lab</td><td align="right">4</td><td align="right">30</td><td align="right">120</td></tr>
+
+<!-- <tr><td>Lab extensions</td><td align="right">2</td><td align="right">10</td><td align="right">20</td></tr> -->
+<tr><td>Presentation</td><td align="right">1</td><td align="right">30</td><td align="right">30</td></tr>
+<tr><td>Preparation</td><td align="right">30</td><td align="right">1</td><td align="right">30</td></tr>
+<tr><td>Projects</td><td align="right">20</td><td align="right">5</td><td align="right">50</td><td>additional 50 Extra credit</td></tr>
+<tr><td>Test</td><td align="right">2</td><td align="right">30</td><td align="right">60</td></tr>
+
+<tr><td>Total for grading</td><td align="right">&nbsp;</td><td align="right">&nbsp;</td><td align="right">290</td></tr>
+</tbody></table>
+
+<p>Your course grade will be recorded as follows:</p>
+<table>
+<tbody><tr><th>GP</th><th>Grade</th></tr>
+<tr><td align="right">270–290</td><td>A</td></tr>
+<tr><td align="right">261–269</td><td>A−</td></tr>
+<tr><td align="right">252–260</td><td>B+</td></tr>
+<tr><td align="right">240–251</td><td>B</td></tr>
+<tr><td align="right">232–239</td><td>B−</td></tr>
+<tr><td align="right">223–231</td><td>C+</td></tr>
+<tr><td align="right">211–222</td><td>C</td></tr>
+<tr><td align="right">203–210</td><td>C−</td></tr>
+<tr><td align="right">194–202</td><td>D+</td></tr>
+<tr><td align="right">182–193</td><td>D</td></tr>
+<tr><td align="right">0–181</td><td>F</td></tr>
+</tbody></table>
+
+<h2>Style guidelines</h2>
+
+All project and lab reports should be readily readable and should
+not presuppose that I already know what you are trying to say.  Use
+full English sentences where appropriate (namely almost everywhere)
+and clear diagrams, programs, etc.  Remember that your goal is to
+communicate clearly and that the appearance of these technical items
+plays a role in this communication process.  Be sure your assignments
+are either submitted online or stapled together with your name on them.
+
+<h2>Accessibility</h2>
+<p>Gustavus Adolphus College is committed to ensuring the full participation of all students in its programs. If you have a documented disability (or you think you may have a disability of any nature) and, as a result, need reasonable academic accommodation to participate in class, take tests or benefit from the College’s services, then you should speak with the Disability Services staff, for a confidential discussion of your needs and appropriate plans. Course requirements cannot be waived, but reasonable accommodations may be provided based on disability documentation and course outcomes. Accommodations cannot be made retroactively; therefore, to maximize your academic success at Gustavus, please contact Disability Services as early as possible. Disability Services (<a href="https://gustavus.edu/advising/disability/">gustavus.edu/advising/disability/</a>) is located in the Academic Support Center. Disability Services Coordinator, Kelly Karstad, (<a href="mailto:kkarstad@gustavus.edu">kkarstad@gustavus.edu</a> or x7138), can provide further information.</p>
+
+<p>
+Support for English learners and multilingual students is available through the Academic Support Center’s Multilingual Learner Academic Specialist, Jody Bryant (<a href="mailto:jbryant2@gustavus.edu">jbryant2@gustavus.edu</a> or x7197). The MLAS can meet individually with students for tutoring in writing, consulting about academic tasks, and helping students connect with the College’s support systems. When requested, the MLAS can consult with faculty regarding effective classroom strategies for English learners and multilingual students. The MLAS can provide students with a letter to a professor that explains and supports appropriate academic arrangements (e.g., additional time on tests, additional revisions for papers). Professors make decisions based on those recommendations at their own discretion. In addition, English learners and multilingual students can seek help from peer tutors in the Writing Center (<a href="https://gustavus.edu/writingcenter/">gustavus.edu/writingcenter/</a>).
+Please let me know if there is any
+accommodation in the course that would enable you to more fully show
+your abilities; for example, I would consider allowing extra time on
+tests, as well as allowing a dictionary in an otherwise closed-book
+test.</p>
+
+<h2><a name="schedule"></a>Schedule</h2>
+
+
+<p>In the reading column, a single number with no decimal point indicates
+an entire chapter.  A number with three decimal points in it, such as
+8.5.1.1 or 8.5.1.2, refers to the material under the first or second
+heading within Section 8.5.1, even though those headings are not
+actually numbered.</p>
+
+<table>
+<tbody><tr><th>Date</th><th>Reading</th><th>Topic</th><th>Due</th></tr>
+<tr><td>9/3</td><td>1</td><td>Introduction</td><td>
+</td></tr><tr><td colspan="4"><hr>
+</td></tr><tr><td>9/5</td><td>2</td><td>Threads</td><td>
+</td></tr><tr><td colspan="4"><hr>
+</td></tr><tr><td>9/6</td><td>3.1-3.3</td><td>Scheduling Goals</td><td>
+</td></tr><tr><td colspan="4"><hr>
+</td></tr><tr><td>9/9</td><td>3.4-3.7</td><td>Scheduling Mechanisms</td><td>
+</td></tr><tr><td colspan="4"><hr>
+</td></tr><tr><td>9/10</td><td></td><td>Lab Preview</td><td>
+</td></tr><tr><td colspan="4"><hr>
+</td></tr><tr><td>9/12</td><td></td><td><a href="http://homepages.gac.edu/~jengelha/courses/F2019/MCS-378/labs/lab1/lab1.html">Lab 1: Scheduling</a></td><td>
+</td></tr><tr><td colspan="4"><hr>
+</td></tr><tr><td>9/13</td><td>4.1-4.3</td><td>Mutual Exclusion
+</td></tr><tr><td colspan="4"><hr>
+</td></tr><tr><td>9/16</td><td>4.4-4.6</td><td>Other Synchronization Patterns</td><td>
+</td></tr><tr><td colspan="4"><hr>
+</td></tr><tr><td>9/17</td><td>4.7-4.8,4.10</td><td>Synchronization Pathologies</td><td><a href="http://homepages.gac.edu/~jengelha/courses/F2019/MCS-378/labs/lab1/lab1.html">Lab 1</a>
+</td></tr><tr><td colspan="4"><hr>
+</td></tr><tr><td>9/19</td><td>4.9</td><td>Nonblocking Synchronization</td><td>
+</td></tr><tr><td colspan="4"><hr>
+</td></tr><tr><td>9/20</td><td><a href="http://homepages.gac.edu/~jengelha/courses/F2019/MCS-378/syllabus.html#paper1">paper 1</a></td><td>Exposing Kernel Concurrency Bugs</td><td> Jeff
+</td></tr><tr><td colspan="4"><hr>
+</td></tr><tr><td>9/23</td><td>5.1-5.2</td><td>Example Applications of Transactions</td><td>
+</td></tr><tr><td colspan="4"><hr>
+</td></tr><tr><td>9/24</td><td></td><td>No class (attend <a href="https://gustavus.edu/events/nobelconference/2019/">Nobel Conference</a>)
+</td></tr><tr><td colspan="4"><hr>
+</td></tr><tr><td>9/26</td><td></td><td>Followup on previous, LFS, probability, grading discussion
+</td></tr><tr><td colspan="4"><hr>
+</td></tr><tr><td>9/27</td><td>9/26</td><td>5.3-5.4</td><td>Mechanisms for Atomicity and Durability</td><td>
+</td></tr><tr><td colspan="4"><hr>
+</td></tr><tr><td>9/30</td><td>6.1-6.2</td><td>Uses for Virtual Memory</td><td>
+</td></tr><tr><td colspan="4"><hr>
+</td></tr><tr><td>10/1</td><td>6.3</td><td>Mechanisms for Virtual Memory
+</td></tr><tr><td colspan="4"><hr>
+</td></tr><tr><td>10/3</td><td>6.4-6.5</td><td>Policies for Virtual Memory
+</td></tr><tr><td colspan="4"><hr>
+</td></tr><tr><td>10/4</td><td></td><td><a href="http://homepages.gac.edu/~jengelha/courses/F2019/MCS-378/20191004MidtermReview.txt">Review of Chapters 1-6</a>
+</td></tr><tr><td colspan="4"><hr>
+</td></tr><tr><td>10/7</td><td><a href="http://homepages.gac.edu/~jengelha/courses/F2019/MCS-378/syllabus.html#paper3">paper 3</a></td><td>Simultaneous Multithreading</td><td>Brad &amp; Lam
+</td></tr><tr><td colspan="4"><hr>
+</td></tr><tr><td>10/8</td><td></td><td>Midterm</td><td>
+</td></tr><tr><td colspan="4"><hr>
+</td></tr><tr><td>10/10</td><td>7.1-7.2</td><td>POSIX Process Management</td><td>
+</td></tr><tr><td colspan="4"><hr>
+</td></tr><tr><td>10/11</td><td>7.3-7.6</td><td>Protection</td><td>
+</td></tr><tr><td colspan="4"><hr>
+</td></tr><tr><td>10/14</td><td></td><td><a href="http://homepages.gac.edu/~jengelha/courses/F2019/MCS-378/labs/lab2/">Lab 2: Prepaging</a></td><td>
+</td></tr><tr><td colspan="4"><hr>
+</td></tr><tr><td>10/15</td><td></td><td>Lab 2 (continued)
+</td></tr><tr><td colspan="4"><hr>
+</td></tr><tr><td>10/17</td><td><a href="http://homepages.gac.edu/~jengelha/courses/F2019/MCS-378/syllabus.html#paper4">paper 4</a></td><td>Shielding Applications from an Untrusted Cloud</td><td>Zach &amp; James
+</td></tr><tr><td colspan="4"><hr>
+</td></tr><tr><td>10/18</td><td></td><td>Lab 2 (continued)</td><td>
+</td></tr><tr><td colspan="4"><hr>
+
+</td></tr><tr><td> 10/19-22</td><td></td><td>Fall Break
+</td></tr><tr><td colspan="4"><hr>
+
+</td></tr><tr><td>10/24</td><td>8.1-8.3</td><td>POSIX File API</td><td>
+</td></tr><tr><td colspan="4"><hr>
+</td></tr><tr><td>10/25</td><td></td><td>Lab 2 (continued)</td><td>
+</td></tr><tr><td colspan="4"><hr>
+</td></tr><tr><td>10/28</td><td></td><td>Lab 2 (continued)</td><td>
+</td></tr><tr><td colspan="4"><hr>
+</td></tr><tr><td>10/29</td><td>8.4-8.5.1.1</td><td>Disk Space Allocation</td><td>
+</td></tr><tr><td colspan="4"><hr>
+</td></tr><tr><td>10/31</td><td>8.5.1.2-8.6</td><td>Metadata, Directories, and Indexes</td><td>
+</td></tr><tr><td colspan="4"><hr>
+</td></tr><tr><td>11/1</td><td></td><td>Lab 2 (continued)</td><td>
+</td></tr><tr><td colspan="4"><hr>
+</td></tr><tr><td>11/4</td><td>8.7-8.9</td><td>Metadata Integrity</td><td><a href="http://homepages.gac.edu/~jengelha/courses/F2019/MCS-378/labs/lab2/">Lab 2</a>
+</td></tr><tr><td colspan="4"><hr>
+</td></tr><tr><td>11/5</td><td></td><td><a href="http://homepages.gac.edu/~jengelha/courses/F2019/MCS-378/labs/lab3/">Lab 3: File Allocation</a>
+</td></tr><tr><td colspan="4"><hr>
+</td></tr><tr><td>11/7</td><td></td><td>Lab 3 (continued)</td><td>
+</td></tr><tr><td colspan="4"><hr>
+</td></tr><tr><td>11/8</td><td>Paper 5 questions</td><td>Lab 3 (continued)</td><td>
+</td></tr><tr><td colspan="4"><hr>
+</td></tr><tr><td>11/11</td><td><a href="http://homepages.gac.edu/~jengelha/courses/F2019/MCS-378/syllabus.html#paper5">paper 5</a></td><td>Log-structured Memory</td><td>Kelsan &amp; Bryan
+</td></tr><tr><td colspan="4"><hr>
+</td></tr><tr><td>11/12</td><td>9.1-9.3.1</td><td>Socket APIs
+</td></tr><tr><td colspan="4"><hr>
+</td></tr><tr><td>11/14</td><td><a href="http://homepages.gac.edu/~jengelha/courses/F2019/MCS-378/syllabus.html#paper6">paper 6</a></td><td>Open vSwitch</td><td> Quinn &amp; Oliver
+</td></tr><tr><td colspan="4"><hr>
+</td></tr><tr><td>11/15</td><td>9.3-end of 9</td><td>Sockets, mostly networking
+</td></tr><tr><td colspan="4"><hr>
+</td></tr><tr><td>11/18</td><td><a href="http://homepages.gac.edu/~jengelha/courses/F2019/MCS-378/syllabus.html#paper7">paper 7</a></td><td>Consensus </td><td><a href="http://homepages.gac.edu/~jengelha/courses/F2019/MCS-378/labs/lab3/">Lab 3</a>
+</td></tr><tr><td colspan="4"><hr>
+</td></tr><tr><td>11/19</td><td></td><td><a href="http://homepages.gac.edu/~jengelha/courses/F2019/MCS-378/labs/lab4/">Lab 4: Write your own webserver</a></td><td>
+</td></tr><tr><td colspan="4"><hr>
+</td></tr><tr><td>11/21</td><td>10.1-10.3</td><td>Messaging and Remote Method Invocation</td><td>
+</td></tr><tr><td colspan="4"><hr>
+</td></tr><tr><td>11/22</td><td>11.1-11.4</td><td>Security Basics</td><td>
+</td></tr><tr><td colspan="4"><hr>
+</td></tr><tr><td>11/25</td><td></td><td>Lab 4 (continued)</td><td>
+</td></tr><tr><td colspan="4"><hr>
+</td></tr><tr><td>11/26</td><td></td><td>Lab 4 (continued)</td><td>
+</td></tr><tr><td colspan="4"><hr>
+</td></tr><tr><td>11/28</td><td>watch the parade</td><td>Thanksgiving break</td><td>
+</td></tr><tr><td colspan="4"><hr>
+</td></tr><tr><td>11/29</td><td>sleep in</td><td>Thanksgiving break</td><td>
+</td></tr><tr><td colspan="4"><hr>
+</td></tr><tr><td>12/2</td><td>11.5-11.8</td><td>More on Security</td><td>
+</td></tr><tr><td colspan="4"><hr>
+</td></tr><tr><td>12/3</td><td></td><td>Lab 4 (continued)</td><td>
+</td></tr><tr><td colspan="4"><hr>
+</td></tr><tr><td>12/5</td><td></td><td>Lab 4 (continued)</td><td>
+</td></tr><tr><td colspan="4"><hr>
+</td></tr><tr><td>12/6</td><td><a href="http://homepages.gac.edu/~jengelha/courses/F2019/MCS-378/syllabus.html#paper9">paper 9</a></td><td>Efficient path-sensitive control security</td><td> Linh Nguyen &amp; Sam Barthel
+</td></tr><tr><td colspan="4"><hr>
+</td></tr><tr><td>12/9</td><td><a href="http://homepages.gac.edu/~jengelha/courses/F2019/MCS-378/syllabus.html#paper8">paper 8</a></td><td>Mobile Money Vulnerabilities </td><td>Jacob &amp; Leah
+</td></tr><tr><td colspan="4"><hr>
+</td></tr><tr><td>12/10</td><td></td><td>Review (Catch up if needed)</td><td><a href="http://homepages.gac.edu/~jengelha/courses/F2019/MCS-378/labs/lab4/">Lab 4</a>
+</td></tr><tr><td colspan="4"><hr>
+</td></tr><tr><td>12/12</td><td></td><td>Review and evaluation    
+
+</td></tr></tbody></table>
+
+
+<p></p><hr>
+<address>
+Course web site: <a href="http://homepages.gac.edu/~jengelha/courses/F2019/MCS-378/">https://gustavus.edu/~jengelha/courses/F2019/MCS-378/</a><br>
+Instructor: <a href="http://homepages.gac.edu/~jengelha/">Jeff Engelhardt</a> &lt;<a href="mailto:jengelha@gustavus.edu">jengelha@gustavus.edu</a>&gt;
+</address>
+
+
+</body></html>

@@ -1,0 +1,41 @@
+
+
+In madvise.c it uses the random flag to set the bit for VM_RAND_READ in the flags
+Check to see where the VM_RAND_READ is used and add one or more ifs thereo that to have it or with disable_prepaging.
+In filemap.c would be a good place to look to see how VM_RAND_READ is used.
+
+
+Things that I did that made it work on my laptop
+Anything in <> is a comment from me and you should not type
+Some filenames may be different, especially the kernel file name if your verison is different
+Remember you can use tab to have it autocomplete things, which also also helps find typos
+
+I had a lot of issues with the newest git distribution, so I had to download an older kernel
+which you can dowload from the lab2 web page
+
+
+sudo make -j 4 deb-pkg LOCALVERSION=-mcs378       <The -j 4 tells it to assume 4 processors
+						   This should speed compilation.
+     	       	       				   The local version name can be whatever, it is
+						   only to make it easier to make sure you are
+						   running your kernel rather than a default one>
+
+cd ..		           <The *.deb files will be in the parent directory>
+
+   <Remember, your filenames may be slightly different>
+
+sudo dpkg -i linux-firmware-image-3.16.75-mcs378_3.16.75-mcs378-1_amd64.deb 
+sudo dpkg -i linux-libc-dev_3.16.75-mcs378-1_amd64.deb 
+sudo dpkg -i linux-headers-3.16.75-mcs378_3.16.75-mcs378-1_amd64.deb 
+sudo dpkg -i linux-image-3.16.75-mcs378-dbg_3.16.75-mcs378-1_amd64.deb 
+sudo dpkg -i linux-image-3.16.75-mcs378_3.16.75-mcs378-1_amd64.deb 
+
+
+Now reboot your computer to have it boot and load the new kernel
+uname -a will tell you what kernel you are running
+
+Remember that if your permissions on the structure in proc is 0644, you need
+to run your testing as root to be able to write to it.  You also could have
+the permissions be 0664 or 0666.
+
+
