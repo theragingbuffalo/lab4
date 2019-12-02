@@ -22,6 +22,7 @@ public class ProcessRequest implements Runnable {
         while ((c = br.read()) != -1) {
             requestStringBuffer.append((char) c);
         }
+        
         // Convert to a string for easier processing later
         request = requestStringBuffer.toString();
         this.s = s;
@@ -31,7 +32,10 @@ public class ProcessRequest implements Runnable {
     {
         String filename = parseRequest();
     	BufferedReader fileReader = getFileReader(filename);
-    	writeToSocket(fileReader, s);
+    	if (fileReader != null)
+    	{
+    		writeToSocket(fileReader, s);
+    	}
     }
     
     private String parseRequest() {
@@ -52,14 +56,6 @@ public class ProcessRequest implements Runnable {
     
     private BufferedReader getFileReader(String filename)
     {
-//    	File file = new File("C:\\Users\\pankaj\\Desktop\\test.txt"); 
-//    	  
-//    	  BufferedReader br = new BufferedReader(new FileReader(file)); 
-//    	  
-//    	  String st; 
-//    	  while ((st = br.readLine()) != null) 
-//    	    System.out.println(st); 
-//    	  } 
     	File file = new File(SITE_ROOT + filename);
     	try
     	{
@@ -82,6 +78,11 @@ public class ProcessRequest implements Runnable {
     	try
     	{
 			PrintWriter out = new PrintWriter(s.getOutputStream(), false);
+			String st;
+			while ((st = br.readLine()) != null)
+			{
+				out.println(st);
+			}
 		}
     	catch (IOException e) {
 			// TODO Auto-generated catch block
