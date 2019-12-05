@@ -56,6 +56,10 @@ public class ProcessRequest implements Runnable {
     
     private BufferedReader getFileReader(String filename)
     {
+    	if (filename.endsWith("/"))
+    	{
+    		filename += "index.html";
+    	}
     	File file = new File(SITE_ROOT + filename);
     	try
     	{
