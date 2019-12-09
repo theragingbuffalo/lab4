@@ -11,6 +11,7 @@ public class Server {
 			port = 8080;
 		}
 
+		@SuppressWarnings("resource")
 		ServerSocket waitSocket = new ServerSocket(port);
 
 		while (true)

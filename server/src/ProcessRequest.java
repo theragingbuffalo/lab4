@@ -5,7 +5,6 @@ import java.io.FileReader;
 import java.io.IOException;
 import java.io.PrintWriter;
 import java.net.Socket;
-import java.text.NumberFormat.Style;
 import java.io.InputStreamReader;
 import java.util.regex.*;
 
@@ -24,13 +23,28 @@ public class ProcessRequest implements Runnable {
         try {
             InputStreamReader isr = new InputStreamReader(socket.getInputStream());
             BufferedReader br = new BufferedReader(isr);
-            String filename = parseRequest(br.readLine());
-            System.out.println(filename);
-            BufferedReader fileReader = getFileReader(filename);
-            if (fileReader != null)
-            {
-                writeToSocket(fileReader);
-            }
+            String st, filename;
+			while ((st = br.readLine()) != null) {
+				// Parse line for properly formatted GET request
+				filename = parseRequest(st);
+				if (filename != null) {
+		            BufferedReader fileReader = getFileReader(filename);
+		            if (fileReader != null)
+		            {
+		            	// If file was found and retrieved successfully,
+		            	// write it to the socket and close
+		                writeToSocket(fileReader);
+		            }
+		            else
+		            {
+		            	// If file was not found, write a
+		            	// message to the socket and close
+		            	writeToSocket("404 - File: " + filename + " not found. :(");
+		            }
+		            socket.close();
+		            break;
+				}
+			}
         } catch (IOException e) {
             e.printStackTrace();
         }
@@ -43,7 +57,8 @@ public class ProcessRequest implements Runnable {
         Matcher valid_request_matcher = valid_request_pattern.matcher(request);
         // Make sure request matches required format
         if (!valid_request_matcher.matches()) {
-            System.out.println("Request was not formatted properly");
+            System.out.println("Request '" + request + "' is not of format " +
+            				   "'GET [file] HTTP/[1.0|1.1]'");
             filename = null;
         } else {
             // Find the filename that was requested
@@ -59,24 +74,24 @@ public class ProcessRequest implements Runnable {
     		filename += "index.html";
     	}
     	File file = new File(SITE_ROOT + filename);
-    	System.out.println("Filename is: " + filename);
     	try
     	{
 			FileReader fileReader = new FileReader(file);
 			BufferedReader bufferedReader = new BufferedReader(fileReader);
 			
+			System.out.println("File: " + filename + " retrieved.");
+			
 	    	return bufferedReader;
 		}
     	catch (FileNotFoundException e)
     	{
-			System.err.println("File: " + file.getAbsolutePath() + " not found. :(");
-			e.printStackTrace();
-		} 
-    	
-    	return null;
+			System.err.println("File: " + file.getAbsolutePath() + " not found.");
+			
+			return null;
+		}
     }
     
-    private Boolean writeToSocket(BufferedReader br)
+    private void writeToSocket(BufferedReader br)
     {
     	try
     	{
@@ -87,12 +102,24 @@ public class ProcessRequest implements Runnable {
 				out.println(st);
 			}
 			out.flush();
+			System.out.println("Wrote file to socket output stream.");
 		}
     	catch (IOException e) {
-			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
-    	
-    	return true;
+    }
+    
+    private void writeToSocket(String message)
+    {
+    	try
+    	{
+			PrintWriter out = new PrintWriter(socket.getOutputStream(), false);
+			out.println(message);
+			out.flush();
+			System.out.println("Wrote message to socket output stream.");
+		}
+    	catch (IOException e) {
+			e.printStackTrace();
+		}
     }
 }
