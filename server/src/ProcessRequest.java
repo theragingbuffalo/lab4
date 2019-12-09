@@ -11,7 +11,7 @@ import java.util.regex.*;
 
 public class ProcessRequest implements Runnable {
 
-	private final String SITE_ROOT = "../site";
+	private final String SITE_ROOT = "site";
     private Socket socket;
 
     public ProcessRequest(Socket socket) {
@@ -59,6 +59,7 @@ public class ProcessRequest implements Runnable {
     		filename += "index.html";
     	}
     	File file = new File(SITE_ROOT + filename);
+    	System.out.println("Filename is: " + filename);
     	try
     	{
 			FileReader fileReader = new FileReader(file);
@@ -85,6 +86,7 @@ public class ProcessRequest implements Runnable {
 			{
 				out.println(st);
 			}
+			out.flush();
 		}
     	catch (IOException e) {
 			// TODO Auto-generated catch block
