@@ -6,8 +6,8 @@ public class Server {
 	public static void main(String[] args) throws IOException {
 		int port;
 		try {
-			port = Integer.parseInt(args[1]);
-		} catch (NumberFormatException e) {
+			port = Integer.parseInt(args[0]);
+		} catch (Exception e) {
 			port = 8080;
 		}
 

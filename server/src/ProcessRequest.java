@@ -5,43 +5,41 @@ import java.io.FileReader;
 import java.io.IOException;
 import java.io.PrintWriter;
 import java.net.Socket;
+import java.text.NumberFormat.Style;
 import java.io.InputStreamReader;
 import java.util.regex.*;
 
 public class ProcessRequest implements Runnable {
-	private final String SITE_ROOT = "../site";
-    private String request;
-    private Socket s;
 
-    public ProcessRequest(Socket s) throws IOException {
-        // Read message from socket connection
-        InputStreamReader isr = new InputStreamReader(s.getInputStream());
-        BufferedReader br = new BufferedReader(isr);
-        StringBuffer requestStringBuffer = new StringBuffer();
-        int c;
-        while ((c = br.read()) != -1) {
-            requestStringBuffer.append((char) c);
-        }
-        
-        // Convert to a string for easier processing later
-        request = requestStringBuffer.toString();
-        this.s = s;
+	private final String SITE_ROOT = "../site";
+    private Socket socket;
+
+    public ProcessRequest(Socket socket) {
+        this.socket = socket;
     }
 	
     public void run()
     {
-        String filename = parseRequest();
-    	BufferedReader fileReader = getFileReader(filename);
-    	if (fileReader != null)
-    	{
-    		writeToSocket(fileReader, s);
-    	}
+        // Read message from socket connection
+        try {
+            InputStreamReader isr = new InputStreamReader(socket.getInputStream());
+            BufferedReader br = new BufferedReader(isr);
+            String filename = parseRequest(br.readLine());
+            System.out.println(filename);
+            BufferedReader fileReader = getFileReader(filename);
+            if (fileReader != null)
+            {
+                writeToSocket(fileReader);
+            }
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
     }
     
-    private String parseRequest() {
+    private String parseRequest(String request) {
         String filename;
         // Setup regex pattern for matching the request to the required format
-        Pattern valid_request_pattern = Pattern.compile("(GET) ([\\S]+) (HTTP\\/1\\.[0-1])");
+        Pattern valid_request_pattern = Pattern.compile("GET (\\S+) HTTP\\/1\\.[01]");
         Matcher valid_request_matcher = valid_request_pattern.matcher(request);
         // Make sure request matches required format
         if (!valid_request_matcher.matches()) {
@@ -49,7 +47,7 @@ public class ProcessRequest implements Runnable {
             filename = null;
         } else {
             // Find the filename that was requested
-            filename = valid_request_matcher.group(2);
+            filename = valid_request_matcher.group(1);
         }
         return filename;
     }
@@ -77,11 +75,11 @@ public class ProcessRequest implements Runnable {
     	return null;
     }
     
-    private Boolean writeToSocket(BufferedReader br, Socket s)
+    private Boolean writeToSocket(BufferedReader br)
     {
     	try
     	{
-			PrintWriter out = new PrintWriter(s.getOutputStream(), false);
+			PrintWriter out = new PrintWriter(socket.getOutputStream(), false);
 			String st;
 			while ((st = br.readLine()) != null)
 			{
