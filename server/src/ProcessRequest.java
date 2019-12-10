@@ -39,7 +39,9 @@ public class ProcessRequest implements Runnable {
 		            {
 		            	// If file was not found, write a
 		            	// message to the socket and close
-		            	writeToSocket("404 - File: " + filename + " not found. :(");
+		            	String errorPage = "<html>\n<body>\n<p>Error 404 - File " + filename + " not found. :("
+		            			+ "</p>\n</body>\n</html>";
+		            	writeToSocket(errorPage);
 		            }
 		            socket.close();
 		            break;
